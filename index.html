@@ -58,6 +58,7 @@
       linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
     background-size: 20px 20px;
+    opacity: 0.8;
     z-index: -1;
   }
   #content {
@@ -68,7 +69,7 @@
   h1 {
     font-weight: 700;
     font-size: 3rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.03em;
     margin-bottom: 0.2em;
     text-transform: lowercase;
   }
@@ -123,16 +124,11 @@
   <div id="grid-overlay"></div>
   <div id="content">
     <h1>binary pleasures</h1>
-    <p>Electronic music label | New sounds, fresh beats</p>
-    <form onsubmit="event.preventDefault(); alert('Subscribed!');">
+    <p>coming to you soon - we are undergoing some maintenence</p>
+    <form onsubmit="event.preventDefault(); alert('subscribed!');">
       <input type="email" placeholder="Your email address" required />
-      <button type="submit">Subscribe</button>
+      <button type="submit">subscribe</button>
     </form>
-    <div class="socials">
-      <a href="#" aria-label="Instagram">Instagram</a>
-      <a href="#" aria-label="SoundCloud">SoundCloud</a>
-      <a href="#" aria-label="Facebook">Facebook</a>
-    </div>
   </div>
 
 <script>
@@ -142,7 +138,7 @@
   setInterval(() => {
     current = current < total ? current + 1 : 1;
     img.src = current + '.jpeg';
-  }, 3000);
+  }, 1000);
 </script>
 </body>
 </html>
