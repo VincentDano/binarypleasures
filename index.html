@@ -1,1 +1,143 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>binary pleasures</title>
+<style>
+  @font-face {
+    font-family: 'TestSoehneKraftig';
+    src: url('test-soehne-kraftig.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  html, body {
+    margin: 0; 
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'TestSoehneKraftig', Arial, sans-serif;
+    color: #e0e0e0;
+  }
+  body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #121212;
+  }
+  video#bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -3;
+    object-fit: cover;
+    opacity: 0.5;
+  }
+  #video-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    z-index: -2;
+  }
+  #grid-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: -1;
+  }
+  #content {
+    position: relative;
+    max-width: 600px;
+    padding: 1rem;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.2em;
+    text-transform: lowercase;
+  }
+  p {
+    font-size: 1.2rem;
+    margin: 0 0 1.5em 0;
+    color: #bbb;
+  }
+  form {
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  input[type="email"] {
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    min-width: 250px;
+  }
+  button {
+    background: #00bfa5;
+    border: none;
+    color: #121212;
+    padding: 0.5em 1.5em;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background: #008e76;
+  }
+  .socials {
+    margin-top: 2em;
+    display: flex;
+    gap: 1.5em;
+    justify-content: center;
+  }
+  .socials a {
+    color: #00bfa5;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="banner.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div id="video-overlay"></div>
+  <div id="grid-overlay"></div>
+  <div id="content">
+    <h1>binary pleasures</h1>
+    <p>Electronic music label | New sounds, fresh beats</p>
+    <form onsubmit="event.preventDefault(); alert('Subscribed!');">
+      <input type="email" placeholder="Your email address" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="socials">
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="SoundCloud">SoundCloud</a>
+      <a href="#" aria-label="Facebook">Facebook</a>
+    </div>
+  </div>
+</body>
+</html>
